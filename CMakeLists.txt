@@ -3,7 +3,16 @@ project(SmartHome C)
 
 set(CMAKE_C_STANDARD 11)
 
-file(GLOB_RECURSE SOURCE_FILES source/*.c)
-file(GLOB_RECURSE HEADER_FILES include/*.h)
+# Get all C files in the source directory
+file(GLOB SOURCE_FILES "${CMAKE_SOURCE_DIR}/source/*.c")
+# Remove main.c from the list
+list(REMOVE_ITEM SOURCE_FILES "${CMAKE_SOURCE_DIR}/source/main.c")
 
-add_executable(SmartHome ${SOURCE_FILES} ${HEADER_FILES})
+# Add the remaining C files to the library target
+add_library(SmartHomeLib ${SOURCE_FILES})
+
+# Add the main.c file to the executable target
+add_executable(SmartHome source/main.c)
+target_compile_options(SmartHomeLib PRIVATE -gdwarf-4)
+target_compile_options(SmartHome PRIVATE -gdwarf-4)
+target_link_libraries(SmartHome SmartHomeLib)

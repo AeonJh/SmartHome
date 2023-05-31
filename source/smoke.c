@@ -47,7 +47,5 @@ void smoke_check()
     }
 
     close(smoke_fd);
-
-    return;
 }
 

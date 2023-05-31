@@ -50,6 +50,7 @@ void lcd_uninit()
 {
     //解除映射
     munmap(p,800*480*4);
+    //关闭文件
     close(lcd_fd);
 }
 

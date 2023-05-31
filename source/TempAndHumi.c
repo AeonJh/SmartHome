@@ -90,11 +90,7 @@ void TempAndHumi()
             LCD_PutString(325, 634, H_Altitude, BLUE, 0xadd8b8);
 
         }
-
         sleep(1);
     }
-
     close(environ_fd);
-
-    return;
 }
