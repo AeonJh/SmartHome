@@ -1,0 +1,1 @@
+cmd_/mnt/hgfs/VMware_Share/my_project/virtual_lcd/GY39_drv/GY39.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /mnt/hgfs/VMware_Share/my_project/virtual_lcd/GY39_drv/GY39.ko /mnt/hgfs/VMware_Share/my_project/virtual_lcd/GY39_drv/GY39.o /mnt/hgfs/VMware_Share/my_project/virtual_lcd/GY39_drv/GY39.mod.o;  true

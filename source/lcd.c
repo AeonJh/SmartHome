@@ -27,7 +27,6 @@ int lcd_init()
     {
         perror("");
         printf("open lcd fail\n");
-
         return 0;
     }
 

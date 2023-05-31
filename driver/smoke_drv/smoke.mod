@@ -1,0 +1,2 @@
+/mnt/hgfs/VMware_Share/my_project/virtual_lcd/smoke_drv/smoke.o
+

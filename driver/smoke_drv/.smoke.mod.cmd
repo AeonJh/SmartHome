@@ -1,0 +1,1 @@
+cmd_/mnt/hgfs/VMware_Share/my_project/virtual_lcd/smoke_drv/smoke.mod := { echo  /mnt/hgfs/VMware_Share/my_project/virtual_lcd/smoke_drv/smoke.o;  echo; } > /mnt/hgfs/VMware_Share/my_project/virtual_lcd/smoke_drv/smoke.mod

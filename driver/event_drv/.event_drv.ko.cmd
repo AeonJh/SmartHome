@@ -1,0 +1,1 @@
+cmd_/mnt/hgfs/VMware_Share/my_project/virtual_lcd/event_drv/event_drv.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /mnt/hgfs/VMware_Share/my_project/virtual_lcd/event_drv/event_drv.ko /mnt/hgfs/VMware_Share/my_project/virtual_lcd/event_drv/event_drv.o /mnt/hgfs/VMware_Share/my_project/virtual_lcd/event_drv/event_drv.mod.o;  true

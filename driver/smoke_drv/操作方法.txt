@@ -1,0 +1,16 @@
+1，切换到这个目录
+
+2，
+	make clean
+	make
+	sudo insmod smoke.ko
+	
+3，
+	查询是否成功
+	cd /dev
+	ls ttySAC1  是黄色表示成功
+	
+	
+4，如果没成功
+	执行  sudo rmmod smoke
+	重复前3步
