@@ -27,13 +27,13 @@ void game2048()
 {
     //初始化游戏背景
     lcd_clean();
-    lcd_display_bmp(0,0,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/2048b.bmp");
-    lcd_display_bmp(0,0,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/return.bmp");
-    lcd_display_bmp(15,110,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/gameboard.bmp");
-    lcd_display_bmp(120,640,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/up.bmp");
-    lcd_display_bmp(280,640,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/down.bmp");
-    lcd_display_bmp(200,560,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/left0.bmp");
-    lcd_display_bmp(200,720,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/right0.bmp");
+    lcd_display_bmp(0,0,"./source/images/2048b.bmp");
+    lcd_display_bmp(0,0,"./source/images/return.bmp");
+    lcd_display_bmp(15,110,"./source/images/gameboard.bmp");
+    lcd_display_bmp(120,640,"./source/images/up.bmp");
+    lcd_display_bmp(280,640,"./source/images/down.bmp");
+    lcd_display_bmp(200,560,"./source/images/left0.bmp");
+    lcd_display_bmp(200,720,"./source/images/right0.bmp");
 
     game_init();
 
@@ -150,7 +150,7 @@ void game2048()
         //结束 or 退出
         if(x_read>=0 && x_read<=120 && y_read>=0 && y_read<=80)
         {
-            lcd_display_bmp(0,0,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/2048bmp/game_over.bmp");
+            lcd_display_bmp(0,0,"./source/images/2048bmp/game_over.bmp");
             break;
         }
 
@@ -354,11 +354,11 @@ int game_over()
     {
         for (int j = 0; j < 4; ++j)
         {
-            if(matrix_2048[i][j] == 128)
+            if(matrix_2048[i][j] == 1024)
             {
                 lcd_clean();
-                lcd_display_bmp(0,0,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/2048bmp/game_win.bmp");
-                //system("madplay -q /mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/music/yeaoh.mp3 &");
+                lcd_display_bmp(0,0,"./source/images/2048bmp/game_win.bmp");
+                //system("madplay -q /mnt/hgfs/VMware_Share/my_project/virtual_lcd./source/music/yeaoh.mp3 &");
                 return 0;
             }
         }
@@ -383,8 +383,8 @@ int game_over()
             }
         }
         lcd_clean();
-        lcd_display_bmp(0,0,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/2048bmp/game_over.bmp");
-        //system("madplay -q /mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/music/boooh.mp3 &");
+        lcd_display_bmp(0,0,"./source/images/2048bmp/game_over.bmp");
+        //system("madplay -q /mnt/hgfs/VMware_Share/my_project/virtual_lcd./source/music/boooh.mp3 &");
         return 0;
     }
 }
@@ -426,40 +426,40 @@ void game_draw()
         for (int j = 0; j < 4; ++j){
             switch(matrix_2048[i][j]){
                 case 0:
-                    lcd_display_bmp(15+i*100+(i+1)*10,110+j*100+(j+1)*10,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/2048bmp/0.bmp");
+                    lcd_display_bmp(15+i*100+(i+1)*10,110+j*100+(j+1)*10,"./source/images/2048bmp/0.bmp");
                     break;
                 case 2:
-                    lcd_display_bmp(15+i*100+(i+1)*10,110+j*100+(j+1)*10,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/2048bmp/2.bmp");
+                    lcd_display_bmp(15+i*100+(i+1)*10,110+j*100+(j+1)*10,"./source/images/2048bmp/2.bmp");
                     break;
                 case 4:
-                    lcd_display_bmp(15+i*100+(i+1)*10,110+j*100+(j+1)*10,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/2048bmp/4.bmp");
+                    lcd_display_bmp(15+i*100+(i+1)*10,110+j*100+(j+1)*10,"./source/images/2048bmp/4.bmp");
                     break;
                 case 8:
-                    lcd_display_bmp(15+i*100+(i+1)*10,110+j*100+(j+1)*10,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/2048bmp/8.bmp");
+                    lcd_display_bmp(15+i*100+(i+1)*10,110+j*100+(j+1)*10,"./source/images/2048bmp/8.bmp");
                     break;
                 case 16:
-                    lcd_display_bmp(15+i*100+(i+1)*10,110+j*100+(j+1)*10,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/2048bmp/16.bmp");
+                    lcd_display_bmp(15+i*100+(i+1)*10,110+j*100+(j+1)*10,"./source/images/2048bmp/16.bmp");
                     break;
                 case 32:
-                    lcd_display_bmp(15+i*100+(i+1)*10,110+j*100+(j+1)*10,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/2048bmp/32.bmp");
+                    lcd_display_bmp(15+i*100+(i+1)*10,110+j*100+(j+1)*10,"./source/images/2048bmp/32.bmp");
                     break;
                 case 64:
-                    lcd_display_bmp(15+i*100+(i+1)*10,110+j*100+(j+1)*10,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/2048bmp/64.bmp");
+                    lcd_display_bmp(15+i*100+(i+1)*10,110+j*100+(j+1)*10,"./source/images/2048bmp/64.bmp");
                     break;
                 case 128:
-                    lcd_display_bmp(15+i*100+(i+1)*10,110+j*100+(j+1)*10,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/2048bmp/128.bmp");
+                    lcd_display_bmp(15+i*100+(i+1)*10,110+j*100+(j+1)*10,"./source/images/2048bmp/128.bmp");
                     break;
                 case 256:
-                    lcd_display_bmp(15+i*100+(i+1)*10,110+j*100+(j+1)*10,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/2048bmp/256.bmp");
+                    lcd_display_bmp(15+i*100+(i+1)*10,110+j*100+(j+1)*10,"./source/images/2048bmp/256.bmp");
                     break;
                 case 512:
-                    lcd_display_bmp(15+i*100+(i+1)*10,110+j*100+(j+1)*10,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/2048bmp/512.bmp");
+                    lcd_display_bmp(15+i*100+(i+1)*10,110+j*100+(j+1)*10,"./source/images/2048bmp/512.bmp");
                     break;
                 case 1024:
-                    lcd_display_bmp(15+i*100+(i+1)*10,110+j*100+(j+1)*10,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/2048bmp/1024.bmp");
+                    lcd_display_bmp(15+i*100+(i+1)*10,110+j*100+(j+1)*10,"./source/images/2048bmp/1024.bmp");
                     break;
                 case 2048:
-                    lcd_display_bmp(15+i*100+(i+1)*10,110+j*100+(j+1)*10,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/2048bmp/2048.bmp");
+                    lcd_display_bmp(15+i*100+(i+1)*10,110+j*100+(j+1)*10,"./source/images/2048bmp/2048.bmp");
                     break;
             }
         }

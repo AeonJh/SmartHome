@@ -332,34 +332,34 @@ void lcd_display_bmp(int y0,int x0,char *pathname)
 //  功能：主屏幕显示
 void origin_view() {
     lcd_clean();
-    lcd_display_bmp(0, 0, "/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/background.bmp");
+    lcd_display_bmp(0, 0, "./source/images/background.bmp");
 
     //显示选项
     //1.环境监测(x:80-205,y:160-285)
-    lcd_display_bmp(160, 80, "/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/environ.bmp");
+    lcd_display_bmp(160, 80, "./source/images/environ.bmp");
     LCD_PutString(285, 105, "1.环境监测", BLACK, 0x72cabf);
     //2.音乐播放器(x:260-378,y:160-285)
-    lcd_display_bmp(160, 260, "/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/music.bmp");
+    lcd_display_bmp(160, 260, "./source/images/music.bmp");
     LCD_PutString(285, 272, "2.音乐播放器", BLACK, 0x72cabf);
     //3.相册(x:430-547,y:160-285)
-    lcd_display_bmp(160, 430, "/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/picture.bmp");
+    lcd_display_bmp(160, 430, "./source/images/picture.bmp");
     LCD_PutString(285, 465, "3.相册", BLACK, 0x72cabf);
     //4.娱乐(x:600-717,y:160-285)
-    lcd_display_bmp(160, 600, "/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/game.bmp");
+    lcd_display_bmp(160, 600, "./source/images/game.bmp");
     LCD_PutString(285, 636, "4.娱乐", BLACK, 0x72cabf);
     //5.退出(x:720-800,y:0-80)
-    lcd_display_bmp(0, 720, "/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/exit.bmp");
+    lcd_display_bmp(0, 720, "./source/images/exit.bmp");
 }
 
 //  功能：加载
 void loading()
 {
-    //lcd_display_bmp(0, 0, "/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/loading1.bmp");
+    //lcd_display_bmp(0, 0, "./source/images/loading1.bmp");
     //sleep(1);
-    lcd_display_bmp(0, 0, "/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/loading2.bmp");
+    lcd_display_bmp(0, 0, "./source/images/loading2.bmp");
     sleep(1);
-    lcd_display_bmp(0, 0, "/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/loading3.bmp");
+    lcd_display_bmp(0, 0, "./source/images/loading3.bmp");
     sleep(1);
-    //lcd_display_bmp(0, 0, "/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/loading4.bmp");
+    //lcd_display_bmp(0, 0, "./source/images/loading4.bmp");
     //sleep(1);
 }

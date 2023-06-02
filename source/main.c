@@ -23,7 +23,7 @@ int main()
     lcd_clean();
 
     //启动画面
-    lcd_display_bmp(0, 0, "images/start.bmp");
+    lcd_display_bmp(0, 0, "./source/images/start.bmp");
     sleep(2);
 
     //显示一个矩形(实心)

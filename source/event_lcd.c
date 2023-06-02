@@ -118,7 +118,7 @@ int event_main()
         {
             system("killall -9 madplay");
             //关机画面
-            lcd_display_bmp(0,0,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/goodbye.bmp");
+            lcd_display_bmp(0,0,"./source/images/goodbye.bmp");
             sleep(3);
             lcd_clean();
             flag = 5;
@@ -139,8 +139,8 @@ int event_main()
 int event_environ()
 {
     lcd_clean();
-    lcd_display_bmp(0,0,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/envir.bmp");
-    lcd_display_bmp(0,0,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/return.bmp");
+    lcd_display_bmp(0,0,"./source/images/envir.bmp");
+    lcd_display_bmp(0,0,"./source/images/return.bmp");
 
 
     int touch_fd = open("/dev/ubuntu_event",O_RDWR);
@@ -233,9 +233,9 @@ system("killall -9 madplay");		//利用system函数调用killall命令将madplay
 int event_music()
 {
     lcd_clean();
-    lcd_display_bmp(0,0,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/player.bmp");
-    lcd_display_bmp(0,0,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/return.bmp");
-    lcd_display_bmp(0,264,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/music_player.bmp");
+    lcd_display_bmp(0,0,"./source/images/player.bmp");
+    lcd_display_bmp(0,0,"./source/images/return.bmp");
+    lcd_display_bmp(0,264,"./source/images/music_player.bmp");
 
     int touch_fd = open("/dev/ubuntu_event", O_RDWR);
 
@@ -253,11 +253,11 @@ int event_music()
     //int bug = 0;
 
     //歌曲存储
-    char mp3_name[5][80]={"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/music/1.mp3",
-                         "/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/music/2.mp3",
-                         "/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/music/3.mp3",
-                         "/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/music/4.mp3",
-                         "/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/music/5.mp3"};
+    char mp3_name[5][80]={"./source/music/1.mp3",
+                         "./source/music/2.mp3",
+                         "./source/music/3.mp3",
+                         "./source/music/4.mp3",
+                         "./source/music/5.mp3"};
 
     char mp3[5][30]={"夏天的风.mp3"," 虞兮叹.mp3"," 红昭愿.mp3","天   下.mp3","爱丫爱丫.mp3"};
 
@@ -265,7 +265,7 @@ int event_music()
     char buf[100];
 
     //进入待播放状态
-    system("madplay -q /mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/music/*.mp3 -r &");
+    system("madplay -q ./source/music/*.mp3 -r &");
     system("killall -STOP madplay &");
     LCD_PutString(120,350,mp3[0],WHITE,BLACK);
 
@@ -315,7 +315,7 @@ int event_music()
             flag--;
             if(flag == -1) flag = 4;
             sprintf(buf,"madplay -q %s &",mp3_name[flag]);
-            lcd_display_bmp(0,264,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/music_player.bmp");
+            lcd_display_bmp(0,264,"./source/images/music_player.bmp");
             LCD_PutString(120,350,mp3[flag],WHITE,BLACK);
             system(buf);
         }
@@ -341,7 +341,7 @@ int event_music()
             flag++;
             if(flag == 5) flag = 0;
             sprintf(buf,"madplay -q %s &",mp3_name[flag]);
-            lcd_display_bmp(0,264,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/music_player.bmp");
+            lcd_display_bmp(0,264,"./source/images/music_player.bmp");
             LCD_PutString(120,350,mp3[flag],WHITE,BLACK);
             system(buf);
             //printf("下一曲\n");
@@ -365,15 +365,15 @@ int event_music()
 int event_picture()
 {
     lcd_clean();
-    lcd_display_bmp(0,0,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/pictures.bmp");
-    lcd_display_bmp(25,125,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/Photo_Frame.bmp");
+    lcd_display_bmp(0,0,"./source/images/pictures.bmp");
+    lcd_display_bmp(25,125,"./source/images/Photo_Frame.bmp");
     //(x:20-107,y:200-280)
-    lcd_display_bmp(200,20,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/left.bmp");
+    lcd_display_bmp(200,20,"./source/images/left.bmp");
     //(x:693-780,y:200-280)
-    lcd_display_bmp(200,693,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/right.bmp");
-    lcd_display_bmp(0,0,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/return.bmp");
+    lcd_display_bmp(200,693,"./source/images/right.bmp");
+    lcd_display_bmp(0,0,"./source/images/return.bmp");
 
-    lcd_display_bmp(105,205,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/picture0.bmp");
+    lcd_display_bmp(105,205,"./source/images/picture0.bmp");
 
     int touch_fd = open("/dev/ubuntu_event", O_RDWR);
 
@@ -398,16 +398,16 @@ int event_picture()
     //printf("%ld\n",sizeof(struct input_event));
 
     //图片数组
-    char picture[10][100]={"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/picture0.bmp",
-                           "/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/picture1.bmp",
-                           "/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/picture2.bmp",
-                           "/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/picture3.bmp",
-                           "/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/picture4.bmp",
-                           "/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/picture5.bmp",
-                           "/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/picture6.bmp",
-                           "/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/picture7.bmp",
-                           "/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/picture8.bmp",
-                           "/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/picture9.bmp"};
+    char picture[10][100]={"./source/images/picture0.bmp",
+                           "./source/images/picture1.bmp",
+                           "./source/images/picture2.bmp",
+                           "./source/images/picture3.bmp",
+                           "./source/images/picture4.bmp",
+                           "./source/images/picture5.bmp",
+                           "./source/images/picture6.bmp",
+                           "./source/images/picture7.bmp",
+                           "./source/images/picture8.bmp",
+                           "./source/images/picture9.bmp"};
 
     //一直读取触摸板信息
     while (1)
@@ -467,9 +467,9 @@ int event_game()
 game_label:
 
     lcd_clean();
-    lcd_display_bmp(0,0,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/2048.bmp");
-    lcd_display_bmp(100,341,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/game.bmp");
-    lcd_display_bmp(0,0,"/mnt/hgfs/VMware_Share/my_project/virtual_lcd/source/images/return.bmp");
+    lcd_display_bmp(0,0,"./source/images/2048.bmp");
+    lcd_display_bmp(100,341,"./source/images/game.bmp");
+    lcd_display_bmp(0,0,"./source/images/return.bmp");
 
     int touch_fd = open("/dev/ubuntu_event", O_RDWR);
 

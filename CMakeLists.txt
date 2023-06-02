@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.22)
 project(SmartHome C)
 
 set(CMAKE_C_STANDARD 11)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
 
 # Get all C files in the source directory
 file(GLOB SOURCE_FILES "${CMAKE_SOURCE_DIR}/source/*.c")
